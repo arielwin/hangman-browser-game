@@ -1,5 +1,7 @@
 # Pseudocode for creating Hangman game in browser
 
+The notes below are layed out in this format in hopes of making coding this browser-based game an easier task
+
 ## Logic
     -word bank and a way to randomly grab a word
         -should I hard code a list of words or find a way to randomly generate a word
