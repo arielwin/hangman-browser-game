@@ -17,7 +17,7 @@ The notes below are layed out in this format in hopes of making coding this brow
 ## UI
     -large container for the 'place holders' of the chosen word represented by underscores eg: secret word -> bike initial "word" should show '_ _ _ _'
     -input - need to figure out how player will input letters. could be a clickable keyboard or, probably more simple, capture inputs directly from the player
-    -a way to show the remaining number of guess head+arms+body+legs = 6 total guess. A big display showing "6 GUESS REMAINING" 
+    -a way to show the remaining number of guesses head+arms+body+legs = 6 total guesses. A big display showing "6 GUESSES REMAINING" 
     -display which letters have been guessed. If using the above 'keyboard' could 'x' out letters, or more simply add them to a container labeld "Guessed Letters"
     -maybe: figure out how to display the hang man
     0
@@ -29,4 +29,5 @@ The notes below are layed out in this format in hopes of making coding this brow
     -event listener for letter or word guesses, like above it could be keyboard presses or on screen button clicks
     -update display as letters are input correctly or incorrectly
     -display Winner or Game Over if conditions are met
+
 
