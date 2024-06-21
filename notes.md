@@ -8,9 +8,11 @@ The notes below are layed out in this format in hopes of making coding this brow
         -possible fuction like pickWord to select from the above wordbank
     -variables
         -a variable to keep the chosen word
-        -a variable of all possible letters
-        -a variable of chosen letters
+        -a variable of all possible letters - How to generate an array of the alphabet - https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-the-alphabet
+
+        -a variable of chosen word/letters
         -more?
+        
     -remaining attempts
     -guessed letters
     -won or lost
