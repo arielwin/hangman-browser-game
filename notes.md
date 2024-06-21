@@ -20,9 +20,11 @@ The notes below are layed out in this format in hopes of making coding this brow
     -a way to show the remaining number of guesses head+arms+body+legs = 6 total guesses. A big display showing "6 GUESSES REMAINING" 
     -display which letters have been guessed. If using the above 'keyboard' could 'x' out letters, or more simply add them to a container labeld "Guessed Letters"
     -maybe: figure out how to display the hang man
-    0
-    /|\
-    /\
+      ______
+      |   |
+      |   0
+      |  /|\
+    __|__/\
     -something like that but centered so the pieces line up
 
 ## Events
