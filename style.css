@@ -12,7 +12,28 @@ h1,h2,h3,h4 {
     text-align: center;
 }
 
-div{
-    text-align: center;
-}
 
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 20px auto;
+    justify-content: center;
+}
+.key {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.row{
+    display: flex;
+    justify-content:center;
+}
