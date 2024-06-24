@@ -21,8 +21,9 @@ const keys = document.querySelectorAll('.key')
 const keyboard = document.querySelector('#keyboard')
 const secretWord = document.querySelector('#secret-word')
 
-winner = false
-blanks = []
+let guesses = 10
+let winner;
+let blanks = []
 
 //----------------Functions-------------------------
 
@@ -43,18 +44,20 @@ function reset () {
 
 function displayUnderscores(word) {
 
-    blanks = word.split('').map(char => '_').join(' ')
+    blanks = (word.split('').map(char => '_'))
     secretWord.textContent = blanks
 }
+
 displayUnderscores(gameWord)
 
-function updateBlanks(letter) {
 
-    
-
+function updateBlanks(word, array, letter) {
+    for (let i =0; i < word.length; i++)   {
+        if(word[i] === letter) {
+            array[i] = letter
+        }
+    }
 }
-
-
 
 
 //--------Listeners-------------------------------
@@ -67,22 +70,23 @@ keys.forEach(key => {
 
         chosenLetter = (key.textContent)
 
-
         // if the picked letter is in the secret word do a few things
         if(gameWord.includes(chosenLetter)) {
             
             // update the color of the key
             key.classList.add('in-word')
             // update the underscores
-            updateBlanks(chosenLetter)
+            updateBlanks(gameWord, blanks, chosenLetter)
             console.log(`${chosenLetter} is in the word`)
+            secretWord.textContent = blanks
+
         // if the picked letter is not in the secret word do different things
         }else {
 
             // change key color to red
             key.classList.add('not-in-word')
             // add a symbol/character to the hangman drawing
-
+            
             //subtract 1 from guesses remaing
 
             console.log(`${chosenLetter} is not in the word`)
