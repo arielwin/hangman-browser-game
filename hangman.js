@@ -3,8 +3,8 @@
 //initiates and splits the alphabet in a list array
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
-//car-realted wordl list
-const word_list = ["engine", "transmission", "brake", "accelerator", "clutch", "gearbox",
+//car-realted word list
+const wordList = ["engine", "transmission", "brake", "accelerator", "clutch", "gearbox",
     "dashboard", "steering", "wheel", "tire", "radiator", "battery", "alternator",
     "exhaust", "muffler", "chassis", "suspension", "axle", "bumper", "hood",
     "trunk", "headlight", "taillight", "windshield", "mirror", "seatbelt",
@@ -13,30 +13,79 @@ const word_list = ["engine", "transmission", "brake", "accelerator", "clutch", "
     "turbocharger", "supercharger", "differential", "fuelpump", "oilfilter",
     "radiatorhose", "shockabsorber", "transaxle", "valve", "wiper"]
 
-//picking the random word from the list using the random word fucntion
-const game_word = randomWord(word_list)
-var chosenLetter = ''
+// picking the random word from the list using the random word fucntion and making it upper case
+const gameWord = randomWord(wordList).toUpperCase()
 
+// selectors for keyboard, keys and the secret word on the webpage
 const keys = document.querySelectorAll('.key')
+const keyboard = document.querySelector('#keyboard')
+const secretWord = document.querySelector('#secret-word')
+
+winner = false
+blanks = []
+
 //----------------Functions-------------------------
 
 //gets a random word from the word list
 function randomWord(list) {
-    const idx = Math.floor(Math.random() * word_list.length)
+    const idx = Math.floor(Math.random() * wordList.length)
     return list[idx]
 }
 
 //function to reset the game after win/loss
 function reset () {
+    //chose a new word
+    //reset guessed letter list
+    //key board colors
+    //reset hangman visual
 
 }
+
+function displayUnderscores(word) {
+
+    blanks = word.split('').map(char => '_').join(' ')
+    secretWord.textContent = blanks
+}
+displayUnderscores(gameWord)
+
+function updateBlanks(letter) {
+
+    
+
+}
+
+
+
 
 //--------Listeners-------------------------------
 
 //keyboard clicks
+console.log(`The game word is ${gameWord}`)
+
 keys.forEach(key => {
     key.addEventListener('click', () => {
-        chosenLetter = (key.textContent);
-        console.log(`You clicked ${chosenLetter}`)
+
+        chosenLetter = (key.textContent)
+
+
+        // if the picked letter is in the secret word do a few things
+        if(gameWord.includes(chosenLetter)) {
+            
+            // update the color of the key
+            key.classList.add('in-word')
+            // update the underscores
+            updateBlanks(chosenLetter)
+            console.log(`${chosenLetter} is in the word`)
+        // if the picked letter is not in the secret word do different things
+        }else {
+
+            // change key color to red
+            key.classList.add('not-in-word')
+            // add a symbol/character to the hangman drawing
+
+            //subtract 1 from guesses remaing
+
+            console.log(`${chosenLetter} is not in the word`)
+        }
     })
 })

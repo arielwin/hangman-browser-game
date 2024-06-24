@@ -4,14 +4,14 @@ The notes below are layed out in this format in hopes of making coding this brow
 
 ## Logic
     -word bank and a way to randomly grab a word
-        - [x] list of words
-        - [ ] fuction pickWord to select from the above wordbank
+        - [X] list of words
+        - [X] fuction pickWord to select from the above wordbank
         - [ ] function initialize - set game state
         - [ ] function reset - reset game
     -variables
         - [ ] a variable to keep the chosen word
         - [ ] a variable of all possible letters - How to generate an array of the alphabet - https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-the-alphabet
-        - [ ] a variable of chosen word/letters
+        - [X] a variable of chosen word/letters
         - [ ] more?
         
     - [ ] remaining attempts
@@ -19,9 +19,9 @@ The notes below are layed out in this format in hopes of making coding this brow
     - [ ] won or lost
 ## UI
     - [ ] large container for the 'place holders' of the chosen word represented by underscores eg: if (secretWord) = bike, numBlankSpaces = 4, "word" should show '_ _ _ _'
-    - [ ] input - clickable inputs or typed guesses
+    - [X] input - clickable inputs or typed guesses
     - [ ] a way to show the remaining number of guesses head+arms+body+legs = 6 total guesses. A big display showing "6 GUESSES REMAINING" 
-    - [ ] display which letters have been guessed. If using the above 'keyboard' could 'x' out letters, or add them to a container labeld "Guessed Letters" or both
+    - [X] display which letters have been guessed. If using the above 'keyboard' could 'x' out letters, or add them to a container labeld "Guessed Letters" or both -- now shows red for wrong and green for right
     - [ ] display the hang man
       ______
       |   |
@@ -31,6 +31,6 @@ The notes below are layed out in this format in hopes of making coding this brow
     - [ ]something like that but centered so the pieces line up
 
 ## Events
-    - [ ]event listener for letter or word guesses, like above it could be keyboard presses or on screen button clicks
-    - [ ] update display as letters are input correctly or incorrectly
+    - [X]event listener for letter or word guesses, like above it could be keyboard presses or on screen button clicks
+    - [X] update display as letters are input correctly or incorrectly
     - [ ] display Winner or Game Over if conditions are met

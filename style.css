@@ -8,10 +8,24 @@ body {
     margin: 0;
 }
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    border: black solid 2px;
+    background-color: azure;
+}
+#reset{
+    justify-content: right;
+    background-color: red;
+}
 h1,h2,h3,h4 {
     text-align: center;
 }
 
+#hangman{
+    align-items: center;
+    justify-content: center;
+}
 
 .keyboard {
     display: flex;
@@ -32,6 +46,12 @@ h1,h2,h3,h4 {
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
+}
+.key.in-word{
+    background-color: #2a950c;
+}
+.key.not-in-word{
+    background-color: #ae1717;
 }
 .row{
     display: flex;
