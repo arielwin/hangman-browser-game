@@ -4,18 +4,17 @@ The notes below are layed out in this format in hopes of making coding this brow
 
 ## Logic
     -word bank and a way to randomly grab a word
-        -should I hard code a list of words or find a way to randomly generate a word
-        -possible fuction like pickWord to select from the above wordbank
+        - [x] list of words
+        - [ ] fuction like pickWord to select from the above wordbank
     -variables
-        -a variable to keep the chosen word
-        -a variable of all possible letters - How to generate an array of the alphabet - https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-the-alphabet
-
-        -a variable of chosen word/letters
-        -more?
+        - [ ] a variable to keep the chosen word
+        - [ ] a variable of all possible letters - How to generate an array of the alphabet - https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-the-alphabet
+        - [ ] a variable of chosen word/letters
+        - [ ] more?
         
-    -remaining attempts
-    -guessed letters
-    -won or lost
+    - [ ] remaining attempts
+    - [ ] guessed letters
+    - [ ] won or lost
 ## UI
     -large container for the 'place holders' of the chosen word represented by underscores eg: secret word -> bike initial "word" should show '_ _ _ _'
     -input - need to figure out how player will input letters. could be a clickable keyboard or, probably more simple, capture inputs directly from the player
@@ -33,5 +32,3 @@ The notes below are layed out in this format in hopes of making coding this brow
     -event listener for letter or word guesses, like above it could be keyboard presses or on screen button clicks
     -update display as letters are input correctly or incorrectly
     -display Winner or Game Over if conditions are met
-
-
