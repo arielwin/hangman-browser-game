@@ -5,7 +5,9 @@ The notes below are layed out in this format in hopes of making coding this brow
 ## Logic
     -word bank and a way to randomly grab a word
         - [x] list of words
-        - [ ] fuction like pickWord to select from the above wordbank
+        - [ ] fuction pickWord to select from the above wordbank
+        - [ ] function initialize - set game state
+        - [ ] function reset - reset game
     -variables
         - [ ] a variable to keep the chosen word
         - [ ] a variable of all possible letters - How to generate an array of the alphabet - https://stackoverflow.com/questions/24597634/how-to-generate-an-array-of-the-alphabet
