@@ -34,3 +34,11 @@ The notes below are layed out in this format in hopes of making coding this brow
     - [X]event listener for letter or word guesses, like above it could be keyboard presses or on screen button clicks
     - [X] update display as letters are input correctly or incorrectly
     - [ ] display Winner or Game Over if conditions are met
+
+
+### websites
+
+    - https://www.html.am/tags/html-pre-tag.cfm#:~:text=The%20element%20can%20be,tact%2C%20and%20without%20word%20wrap.
+
+    - https://github.com/juliedlevine/Hangman-ascii/blob/master/hangman.js
+

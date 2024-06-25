@@ -15,8 +15,28 @@ nav{
     background-color: azure;
 }
 #reset{
-    justify-content: right;
+    justify-content: left;
     background-color: red;
+    display: flex;
+    justify-content: center;
+}
+#reset-bottom{
+
+    justify-content: center;
+    background-color: red;
+    width: 100px;
+    text-align: center;
+    text-justify: center;
+    color: yellow;
+    justify-items: center;
+    justify-content: center;
+    
+}
+
+#reset-bottom:hover{
+    background-color: yellow;
+    color: red;
+    cursor: pointer;
 }
 h1,h2,h3,h4 {
     text-align: center;
