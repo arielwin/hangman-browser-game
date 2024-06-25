@@ -74,7 +74,7 @@ const wordList = ["engine", "transmission", "brake", "accelerator", "clutch", "g
     `]
 
 // picking the random word from the list using the random word fucntion and making it upper case
-let gameWord = randomWord(wordList).toUpperCase()
+//let gameWord = randomWord(wordList).toUpperCase()
 
 // selectors for keyboard, keys and the secret word on the webpage
 const keys = document.querySelectorAll('.key')
@@ -89,6 +89,10 @@ let chances = 6
 let winner = '';
 let blanks = []
 let arrayCounter = 0
+
+// display the corresponding underscorees for the first time
+//displayUnderscores(gameWord)
+
 //----------------Functions-------------------------
 
 //gets a random word from the word list
@@ -97,28 +101,24 @@ function randomWord(list) {
     return list[idx]
 }
 
-//function to reset the game after win/loss
-// const init = () = {
-//     console.log('reset clicked')
-//     //chose a new word
-//     //reset guessed letter list
-//     //key board colors
-//     //reset hangman visual
-//     gameWord = randomWord(wordList)
-//     displayUnderscores(gameWord)
-//     chances = 6
-//     winner =''
-//     arrayCounter = 0
-//     keys.forEach(key => {
-//         key.classList.remove('in-word')
-//         key.classList.remove('not-in-word')
-//     })
-//     hangedman.textContent = hangmanArray[arrayCounter]
-//     //guesses.innerText = chances
-//     //gameMessage.innerText = `You have ${chances} guesses remaining!`
-//     checkWin()
-//     console.log(gameWord)
-// }
+// function to reset the game after win/loss
+function init() {
+    console.log('reset clicked')
+    gameWord = randomWord(wordList).toUpperCase()
+    displayUnderscores(gameWord)
+    chances = 6
+    winner = ''
+    arrayCounter = 0
+    keys.forEach(key => {
+        key.classList.remove('in-word')
+        key.classList.remove('not-in-word')
+    })
+    hangedman.textContent = hangmanArray[arrayCounter]
+    guesses.innerText = chances
+    gameMessage.innerText = `You have ${chances} guesses remaining!`
+    checkWin()
+    console.log(gameWord)
+}
 
 
 // takes the randomly chosen word, splits it to an array and replaces each letter with an underscore
@@ -126,8 +126,7 @@ function displayUnderscores(word) {
     blanks = (word.split('').map(char => '_'))
     secretWord.textContent = blanks
 }
-// display the corresponding underscorees for the first time
-displayUnderscores(gameWord)
+
 
 // replace underscores with a letter if it was guessed correctly
 function updateBlanks(word, array, letter) {
@@ -141,8 +140,9 @@ function updateBlanks(word, array, letter) {
 
 // check to see if the game has been won and do something based on that state
 function checkWin(){
-    if(chances === 0 && blanks.includes('_')){
+    if(chances <= 0 && blanks.includes('_')){
         gameMessage.innerText = 'Bummer! Game Over.'
+        hangedman.textContent = hangmanArray[6]
         return
     } else if(chances >= 0 && blanks.includes('_')){
         console.log('check win: carry on')
@@ -152,31 +152,17 @@ function checkWin(){
     }
 }
 
-// function handleClick(event) {
-//     chosenLetter = key.textContent
-//     if(gameWord.includes(chosenLetter)) {
-//         key.classList.add('in-word')
-//         updateBlanks(gameWord, blanks, chosenLetter)
-//         secretWord.textContent = blanks
-//         checkWin()
-//     } else {
-//         key.classList.add('not-in-word')
-//         chances -= 1
-//         arrayCounter += 1
-//         guesses.innerText = chances
-//         hangedman.textContent = hangmanArray[arrayCounter]
-//         checkWin()
-//     }
-// }
-
 //--------Listeners-------------------------------
 
 //main game loop
+
 keys.forEach(key => {
     //listen for clicks on each key
+    
     key.addEventListener('click', () => {
         //The current letter that was chosen
         chosenLetter = (key.textContent)
+        console.log(chosenLetter)
         // if the picked letter is in the secret word do a few things
         if(gameWord.includes(chosenLetter)) {
             // update the color of the key
@@ -197,14 +183,15 @@ keys.forEach(key => {
             guesses.innerText = chances
             // updates the image of the hangman
             hangedman.textContent = hangmanArray[arrayCounter]
-            gameMessage.innerText = `You have ${chaces} guess remaining`
+            gameMessage.innerText = `You have ${chances} guess remaining`
             // check to see if the game was
             checkWin()
         }
-    })
+    }) 
 })
 
-
+// Initialize the game state using the init function
+init()
 
 // display the first [0] hangman array which is the empty gallows
 hangedman.textContent = hangmanArray[arrayCounter]
