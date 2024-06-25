@@ -141,7 +141,7 @@ function updateBlanks(word, array, letter) {
 // check to see if the game has been won and do something based on that state
 function checkWin(){
     if(chances <= 0 && blanks.includes('_')){
-        gameMessage.innerText = 'Bummer! Game Over.'
+        gameMessage.innerText = 'Bummer! Game Over. Keep guessing to reveal the word or click Play Again!'
         hangedman.textContent = hangmanArray[6]
         return
     } else if(chances >= 0 && blanks.includes('_')){
@@ -155,7 +155,6 @@ function checkWin(){
 //--------Listeners-------------------------------
 
 //main game loop
-
 keys.forEach(key => {
     //listen for clicks on each key
     

@@ -8,32 +8,23 @@ body {
     margin: 0;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    border: black solid 2px;
-    background-color: azure;
-}
-#reset{
-    justify-content: left;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-}
-#reset-bottom{
 
+
+#reset-bottom{
+    display: flex;
     justify-content: center;
+    align-items: center;
     background-color: red;
     width: 100px;
-    text-align: center;
-    text-justify: center;
     color: yellow;
-    justify-items: center;
-    justify-content: center;
-    
+
+
 }
 
 #reset-bottom:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: yellow;
     color: red;
     cursor: pointer;
@@ -76,4 +67,16 @@ h1,h2,h3,h4 {
 .row{
     display: flex;
     justify-content:center;
+}
+
+nav{
+    display: flex;
+    align-items: right;
+    justify-items: right;
+    border: black solid 2px;
+    background-color: rgb(170, 179, 179);
+    margin: 12px;
+    text-align: center;
+    padding: 12px;
+    width: 250px;
 }
