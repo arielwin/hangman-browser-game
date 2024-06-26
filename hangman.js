@@ -73,9 +73,6 @@ const wordList = ["engine", "transmission", "brake", "accelerator", "clutch", "g
     =========
     `]
 
-// picking the random word from the list using the random word fucntion and making it upper case
-//let gameWord = randomWord(wordList).toUpperCase()
-
 // selectors for keyboard, keys and the secret word on the webpage
 const keys = document.querySelectorAll('.key')
 const keyboard = document.querySelector('#keyboard')
@@ -86,7 +83,7 @@ const hangedman = document.querySelector('#hangman')
 const gameMessage = document.querySelector('#game-message')
 
 let chances = 6
-let winner = '';
+let gameOver = '';
 let blanks = []
 let arrayCounter = 0
 
@@ -103,11 +100,10 @@ function randomWord(list) {
 
 // function to reset the game after win/loss
 function init() {
-    console.log('reset clicked')
     gameWord = randomWord(wordList).toUpperCase()
     displayUnderscores(gameWord)
     chances = 6
-    winner = ''
+    gameOver = ''
     arrayCounter = 0
     keys.forEach(key => {
         key.classList.remove('in-word')
@@ -117,7 +113,6 @@ function init() {
     guesses.innerText = chances
     gameMessage.innerText = `You have ${chances} guesses remaining!`
     checkWin()
-    console.log(gameWord)
 }
 
 
@@ -126,7 +121,6 @@ function displayUnderscores(word) {
     blanks = (word.split('').map(char => '_'))
     secretWord.textContent = blanks
 }
-
 
 // replace underscores with a letter if it was guessed correctly
 function updateBlanks(word, array, letter) {
@@ -137,57 +131,40 @@ function updateBlanks(word, array, letter) {
     }
 }
 
-
 // check to see if the game has been won and do something based on that state
 function checkWin(){
     if(chances <= 0 && blanks.includes('_')){
-        gameMessage.innerText = 'Bummer! Game Over. Keep guessing to reveal the word or click Play Again!'
+        gameMessage.innerText = 'Bummer! Game Over. Play Again?'
         hangedman.textContent = hangmanArray[6]
+        gameOver = true
+    }else if(chances >= 0 && blanks.includes('_')){
         return
-    } else if(chances >= 0 && blanks.includes('_')){
-        console.log('check win: carry on')
-    } else if (chances >= 1 && !blanks.includes('_')){
-        gameMessage.innerText = 'Nicely Done! You Win!'
-        return
+    }else if (chances >= 1 && !blanks.includes('_')){
+        gameMessage.innerText = 'You Win! Play Again?'
+        gameOver = true
     }
 }
 
 //--------Listeners-------------------------------
-
-//main game loop
-keys.forEach(key => {
-    //listen for clicks on each key
-    
+for (let key of keys) {
     key.addEventListener('click', () => {
-        //The current letter that was chosen
+        if(gameOver) return;
         chosenLetter = (key.textContent)
-        console.log(chosenLetter)
-        // if the picked letter is in the secret word do a few things
         if(gameWord.includes(chosenLetter)) {
-            // update the color of the key
             key.classList.add('in-word')
-            // update the on-screen underscores
             updateBlanks(gameWord, blanks, chosenLetter)
             secretWord.textContent = blanks
-            //check to see if the game has been won
             checkWin()
-        // if the picked letter is not in the secret word do different things
-        }else {
-            // change key color to red
-            key.classList.add('not-in-word')        
-            //subtract 1 from guesses remaing and add 1 to the "hangmanAay" to get to the next ASCII image
-            chances -= 1
+        } else {
+            key.classList.add('not-in-word')
             arrayCounter += 1
-            // Update the remaining guesses number on the webpage
-            guesses.innerText = chances
-            // updates the image of the hangman
+            guesses.innerText = chances -=1
             hangedman.textContent = hangmanArray[arrayCounter]
-            gameMessage.innerText = `You have ${chances} guess remaining`
-            // check to see if the game was
+            gameMessage.innerText = `You have ${chances} guesses remaining!`
             checkWin()
         }
-    }) 
-})
+    })
+}
 
 // Initialize the game state using the init function
 init()
@@ -197,3 +174,62 @@ hangedman.textContent = hangmanArray[arrayCounter]
 
 // activate the 'reset' button so that it can be clicked and run the restart function
 resetButton.addEventListener('click', init)
+
+
+
+
+
+
+
+
+//                                         .
+//                                        -|-
+//                                         |
+//                                     .-'~~~`-.
+//                                   .'         `.
+//                                   |  R  I  P  |
+//                                   |           |
+//                                   |           |
+//                                 \\|           |//
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//
+// tombstone found at - https://ascii.co.uk/art/rip
+//
+// //-------------------------------CODE GRAVEYARD---------------------------------------
+//
+// //main game loop
+// keys.forEach(key => {
+//     //listen for clicks on each key
+    
+//     key.addEventListener('click', () => {
+//         //The current letter that was chosen
+//         chosenLetter = (key.textContent)
+//         console.log(chosenLetter)
+//         // if the picked letter is in the secret word do a few things
+//         if(gameWord.includes(chosenLetter)) {
+//             // update the color of the key
+//             key.classList.add('in-word')
+//             // update the on-screen underscores
+//             updateBlanks(gameWord, blanks, chosenLetter)
+//             secretWord.textContent = blanks
+//             //check to see if the game has been won
+//             checkWin()
+//         // if the picked letter is not in the secret word do different things
+//         }else {
+//             // change key color to red
+//             key.classList.add('not-in-word')        
+//             //subtract 1 from guesses remaing and add 1 to the "hangmanAay" to get to the next ASCII image
+//             chances -= 1
+//             arrayCounter += 1
+//             // Update the remaining guesses number on the webpage
+//             guesses.innerText = chances
+//             // updates the image of the hangman
+//             hangedman.textContent = hangmanArray[arrayCounter]
+//             gameMessage.innerText = `You have ${chances} guess remaining`
+//             // check to see if the game was
+//             checkWin()
+//         }
+
+//     })
+// })
+// //----------------------------------------------------------------------------------------------------
