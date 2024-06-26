@@ -49,3 +49,9 @@ The notes below are layed out in this format in hopes of making coding this brow
     - https://stackoverflow.com/questions/38406941/underscore-js-to-check-if-element-in-array-exists
     
     - https://www.w3schools.com/tags/tag_span.asp
+
+    - https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-examples
+
+    - https://coolors.co/0c120c-2a9d8f-e9c46a-f4a261-e76f51
+
+    - https://www.w3.org/TR/WCAG20/
