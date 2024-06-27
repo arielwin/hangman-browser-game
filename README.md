@@ -1,3 +1,5 @@
+# Automotive Hangman
+
       +---+
       |   |
       O   |
@@ -6,24 +8,22 @@
           |
     =========
 
-# Automotive Hangman
-
 ## This is my browser-based game of hangman!
-This game of hangman choses from a wordbank related to cars and car parts. (That is my childhood passion.) I chose this game because when I visualized coding this game I felt that I could see and understnad all of the pieces. Now that it is complete, I am excited to roll what I have learned into more complex projects.
+This game of hangman chooses from a wordbank related to cars and car parts. (That is my childhood passion.) I chose this game because when I visualized coding this game I felt that I could see and understnad all of the pieces. Now that it is complete, I am excited to roll what I have learned into more complex projects.
 
 ## Getting Started:
 
 [Click here to play my game!](https://arielwin.github.io/hangman-browser-game/) 
 
 Instructions: 
- - Simply click on the keyboard to guess letters of the secret word. 
+ - Simply click on the on-screen keyboard to guess letters of the secret word. 
  - Be careful: you only have as many guess as the stickman has body parts! 
  - Win or lose, you can reset the game at any point using the play again button at the bottom.
 
 ## Attributions 
 Below are some links to resources I used to complete this game
    
-[My own notes at the start of this porject](https://github.com/arielwin/hangman-browser-game/blob/main/notes.md)
+[My own notes at the start of this project](https://github.com/arielwin/hangman-browser-game/blob/main/notes.md)
 
     How I displayed ASCII art
     - https://www.html.am/tags/html-pre-tag.cfm#:~:text=The%20element%20can%20be,tact%2C%20and%20without%20word%20wrap.
@@ -56,5 +56,5 @@ Below are some links to resources I used to complete this game
 
 ## Next Steps:
 
-The next steps for this project are pretty simply: I would like to return to this project in the future and see how much of it I can simplify. I believe my code at this point, while it functions well, may be inefficient. 
+The next steps for this project are pretty simple: I would like to return to this project in the future and see how much of it I can simplify. I believe my code at this point, while it functions well, may be inefficient. 
 
