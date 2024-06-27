@@ -1,1 +1,16 @@
-This README will be empty until I have fleshed out parts of the Hangman Game. 
+      +---+
+      |   |
+      O   |
+     /|\\\  |
+     / \\\  |
+          |
+    =========
+
+
+
+# Automotive Hangman
+
+
+
+### This is my browser-based game of hangman! 
+
