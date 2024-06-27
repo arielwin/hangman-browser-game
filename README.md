@@ -2,17 +2,10 @@
 ![SCreenshot of hangman game](https://github.com/arielwin/images-for-readme/assets/73318515/06c74155-225b-43cb-97ea-186a9fdcccb9)
 
 
-# Automotive Hangman #### created by Ari Winters
+# Automotive Hangman 
+#### created by Ari Winters
 
-      +---+
-      |   |
-      O   |
-     /|\  |
-     / \  |
-          |
-    =========
-
-## This is my browser-based game of hangman!
+## Browser-based Game of Hangman
 This game of hangman chooses from a wordbank related to cars and car parts. (That is my childhood passion.) I chose this game because when I visualized coding this game I felt that I could see and understnad all of the pieces. Now that it is complete, I am excited to roll what I have learned into more complex projects.
 
 ## Getting Started:
