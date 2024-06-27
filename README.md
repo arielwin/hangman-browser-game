@@ -1,4 +1,6 @@
-# Automotive Hangman
+![Hangman Game](image.png)!
+
+# Automotive Hangman #### created by Ari Winters
 
       +---+
       |   |
