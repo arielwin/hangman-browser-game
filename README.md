@@ -23,7 +23,7 @@ Instructions:
 ## Attributions 
 Below are some links to resources I used to complete this game
    
-    (My own notes at the start of this porject)[./notes.md]
+    [My own notes at the start of this porject](https://github.com/arielwin/hangman-browser-game/blob/main/notes.md)
 
     How I displayed ASCII art
     - https://www.html.am/tags/html-pre-tag.cfm#:~:text=The%20element%20can%20be,tact%2C%20and%20without%20word%20wrap.
