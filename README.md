@@ -48,3 +48,13 @@ Below are some links to resources I used to complete this game
 
     - https://www.w3.org/TR/WCAG20/
 
+## Tech I Used:
+
+ - HTML
+ - Javascript
+ - CSS
+
+## Next Steps:
+
+The next steps for this project are pretty simply: I would like to return to this project in the future and see how much of it I can simplify. I believe my code at this point, while it functions well, may be inefficient. 
+
