@@ -87,9 +87,6 @@ let gameOver = '';
 let blanks = []
 let arrayCounter = 0
 
-// display the corresponding underscorees for the first time
-//displayUnderscores(gameWord)
-
 //----------------Functions-------------------------
 
 //gets a random word from the word list
@@ -98,7 +95,7 @@ function randomWord(list) {
     return list[idx]
 }
 
-// function to reset the game after win/loss
+// function to initialize the game, and used as a reset
 function init() {
     gameWord = randomWord(wordList).toUpperCase()
     displayUnderscores(gameWord)
@@ -114,7 +111,6 @@ function init() {
     gameMessage.innerText = `You have ${chances} guesses remaining!`
     checkWin()
 }
-
 
 // takes the randomly chosen word, splits it to an array and replaces each letter with an underscore
 function displayUnderscores(word) {
@@ -145,22 +141,40 @@ function checkWin(){
     }
 }
 
-//--------Listeners-------------------------------
+//----------Main Game Loop on webpage------------
+
+//for each key on the keyboard
 for (let key of keys) {
+    
+    //listen for a click on any key
     key.addEventListener('click', () => {
+        //if win condition met, escape. used to stop extra clicks on the keyboard
         if(gameOver) return;
+        //asign the letter on the key to a variable
         chosenLetter = (key.textContent)
+        //if the clicked letter is in the word...
         if(gameWord.includes(chosenLetter)) {
+            //apply green-colored css
             key.classList.add('in-word')
+            //update the blank space at the postion of the correct letter in the list
             updateBlanks(gameWord, blanks, chosenLetter)
+            //display the new list with the updated letters
             secretWord.textContent = blanks
+            //run checkWin
             checkWin()
+        // if the clicked letter is not in the word    
         } else {
+            // apply css to the key its not clicked again
             key.classList.add('not-in-word')
+            // add one to the array counter
             arrayCounter += 1
+            // minus 1 from chances/guess
             guesses.innerText = chances -=1
+            // move the hangman ascii art forward by one
             hangedman.textContent = hangmanArray[arrayCounter]
+            // update the 'guesses remaining' text on screen
             gameMessage.innerText = `You have ${chances} guesses remaining!`
+            //run checkWin
             checkWin()
         }
     })
