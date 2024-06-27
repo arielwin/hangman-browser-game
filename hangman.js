@@ -16,13 +16,13 @@ const wordList = ["engine", "transmission", "brake", "accelerator", "clutch", "g
 
     //ASCII Art courtesy of https://github.com/juliedlevine/Hangman-ascii/blob/master/hangman.js
     hangmanArray = [`
-        +---+
-        |   |
-            |
-            |
-            |
-            |
-      =========
+      +---+
+      |   |
+          |
+          |
+          |
+          |
+    =========
       `, `
       +---+
       |   |
