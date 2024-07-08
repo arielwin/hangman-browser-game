@@ -51,5 +51,5 @@ Below are some links to resources I used to complete this game
 
 ## Next Steps:
 
-The next steps for this project are pretty simple: I would like to return to this project in the future and see how much of it I can simplify. I believe my code at this point, while it functions well, may be inefficient. 
+The next steps for this project are pretty simple: I would like to return to this project in the future and see how much of it I can simplify. I believe my code at this point, while it functions well, may be inefficient. Additionally, I would multiple word banks and have the front end update to represent the new word bank.
 
