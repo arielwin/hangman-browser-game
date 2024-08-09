@@ -8,7 +8,7 @@ This game of hangman chooses from a wordbank related to cars and car parts. (Tha
 
 ## Getting Started:
 
-[Click here to play my game!](https://arielwin.github.io/hangman-browser-game/) 
+#[Click here to play!](https://arielwin.github.io/hangman-browser-game/) 
 
 Instructions: 
  - Simply click on the on-screen keyboard to guess letters of the secret word. 
